@@ -1,61 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Asisten AI untuk UMKM kripik hasil olahan pertanian: katalog, pesanan, dan promosi lebih mudah.">
     <title>Asisten AI untuk UMKM</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Asisten AI untuk UMKM</h1>
-        <p>saya menjual berbagai makanan hasil olahan pertanian</p>
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
+    <header class="site-header">
+        <div class="brand">
+            <h1>Asisten AI untuk UMKM</h1>
+            <p>Saya menjual berbagai makanan hasil olahan pertanian</p>
+        </div>
+        <nav class="site-nav" aria-label="Navigasi utama">
+            <a href="#fitur">Fitur</a>
+            <a href="#profile">Profile</a>
+            <a href="#formdata">Formdata</a>
+        </nav>
     </header>
-    <nav>
-        <a href="#profile">profile</a>
-        <a href="#formdata">formdata</a>
-    </nav>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZjrSclc1QOARu5JO1XBd6dhOdaCGIaJtOKuocgR0ksoyTMPKqnGmHbwQD&s=10" alt="Pemilik UMKM sedang melayani pelanggan">
 
-    <section id="profile">
-        <h2>Masukkan Data Diri Anda</h2>
-        <p>Untuk melengkapi pemesanan Anda, silakan isi formulir di bawah ini:</p>
-    </section>
-    <form id="formdata" action="#">
-        <label for="nama">masukkan nama anda</label>
-        <input type="text" id="nama" name="nama" required>
-        <br>
-        <label for="alamat">masukkan alamat anda</label>
-        <textarea id="alamat" name="alamat" required></textarea>
-        <br>
-        <label for="tanggal">masukkan tanggal lahir anda</label>
-        <input type="date" id="tanggal" name="tanggal" required>
+    <main id="konten">
+        <!-- HERO: Grid dua kolom di layar besar -->
+        <section class="hero" aria-labelledby="judul-hero">
+            <div class="hero-text">
+                <h2 id="judul-hero">Kripik dari kebun, dikelola lebih rapi dengan bantuan AI</h2>
+                <p>Catat pesanan, susun deskripsi produk, dan balas pertanyaan pelanggan dengan cepat. Semua untuk usaha kripik singkong, pisang, talas, dan bayam Anda.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#formdata">Isi data pemesanan</a>
+                    <a class="btn btn-ghost" href="#fitur">Lihat fitur</a>
+                </div>
+            </div>
 
-        <fieldset id="jeniskelamin">
-            <legend>jenis kelamin</legend>
-            <input type="radio" name="jeniskelamin" id="pria" value="pria" required>
-            <label for="pria">pria</label>
-            <input type="radio" name="jeniskelamin" id="wanita" value="wanita">
-            <label for="wanita">wanita</label>
-        </fieldset>
+            <div class="hero-card">
+                <svg class="hero-art" viewBox="0 0 320 240" role="img" aria-label="Ilustrasi mangkuk berisi kripik renyah dengan daun hijau">
+                    <circle cx="160" cy="120" r="108" fill="#e3f2e8"/>
+                    <path d="M214 46c30 4 50 24 54 52-30-2-52-20-54-52z" fill="#2a8a58"/>
+                    <path d="M214 46c14 18 30 34 54 52" fill="none" stroke="#1f6b45" stroke-width="3" stroke-linecap="round"/>
+                    <g fill="#f0bd3c" stroke="#d99a1e" stroke-width="3">
+                        <ellipse cx="108" cy="124" rx="38" ry="24" transform="rotate(-18 108 124)"/>
+                        <ellipse cx="170" cy="104" rx="40" ry="25" transform="rotate(10 170 104)"/>
+                        <ellipse cx="222" cy="128" rx="36" ry="23" transform="rotate(24 222 128)"/>
+                        <ellipse cx="160" cy="134" rx="38" ry="24" transform="rotate(-6 160 134)"/>
+                    </g>
+                    <g fill="#d99a1e" opacity=".55">
+                        <circle cx="98" cy="120" r="4"/>
+                        <circle cx="120" cy="130" r="3"/>
+                        <circle cx="168" cy="100" r="4"/>
+                        <circle cx="184" cy="110" r="3"/>
+                        <circle cx="216" cy="126" r="4"/>
+                        <circle cx="156" cy="136" r="3"/>
+                    </g>
+                    <path d="M52 142h216c0 56-40 88-108 88S52 198 52 142z" fill="#1f6b45"/>
+                    <path d="M52 142h216" stroke="#12372a" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M92 176c18 18 44 26 68 26" fill="none" stroke="#2a8a58" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <h3>Kripik hasil kebun</h3>
+                <ul class="product-list">
+                    <li><strong>Singkong</strong> renyah dan gurih</li>
+                    <li><strong>Pisang</strong> manis alami</li>
+                    <li><strong>Talas</strong> tipis dan ringan</li>
+                    <li><strong>Bayam</strong> hijau dan segar</li>
+                </ul>
+            </div>
+        </section>
 
-        <fieldset id="hobi">
-            <legend>hobi</legend>
-            <input type="checkbox" name="hobi" id="membaca" value="membaca">
-            <label for="membaca">membaca</label>
-            <input type="checkbox" name="hobi" id="menulis" value="menulis">
-            <label for="menulis">menulis</label>
-            <input type="checkbox" name="hobi" id="olahraga" value="olahraga">
-            <label for="olahraga">olahraga</label>
-        </fieldset>
-        <button type="submit">Kirim</button>
+        <!-- FITUR: CSS Grid 1 / 2 / 3 kolom -->
+        <section class="features" id="fitur" aria-labelledby="judul-fitur">
+            <h2 id="judul-fitur">Yang bisa dibantu asisten</h2>
+            <p class="section-lead">Enam pekerjaan harian yang biasanya memakan waktu, dibuat lebih singkat.</p>
 
-    </form>
-    <footer>
-        <a href="">WA / Telp 089621507403</a>
-        <br>
-        <a href="">Email: restuchandra@example.com</a>
-        <p>copyright &copy; 2026 Restu Chandra Fitrianto</p>
-        <br>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                    <h3>Katalog produk</h3>
+                    <p>Susun daftar kripik lengkap dengan rasa, ukuran kemasan, dan harga.</p>
+                </article>
+                <article class="feature-card">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z"/></svg>
+                    <h3>Balas pelanggan</h3>
+                    <p>Draf jawaban cepat untuk pertanyaan stok, ongkir, dan cara pesan.</p>
+                </article>
+                <article class="feature-card">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v4M15 3v4M5 8h14v5a7 7 0 0 1-14 0zM12 20v1"/></svg>
+                    <h3>Rekomendasi AI</h3>
+                    <p>Saran varian rasa dan paket hemat sesuai produk yang paling laku.</p>
+                </article>
+                <article class="feature-card">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10"/></svg>
+                    <h3>Stok dan harga</h3>
+                    <p>Pantau persediaan bahan dan hasil produksi agar tidak kehabisan.</p>
+                </article>
+                <article class="feature-card">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l14-6v14L3 13zM7 14l1 5h3l-1-4"/></svg>
+                    <h3>Teks promosi</h3>
+                    <p>Caption media sosial dan pesan siaran yang siap disalin dan dikirim.</p>
+                </article>
+                <article class="feature-card">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+                    <h3>Catatan penjualan</h3>
+                    <p>Rekap penjualan mingguan supaya keuntungan usaha mudah dipantau.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FORM -->
+        <section class="order" id="profile" aria-labelledby="judul-form">
+            <div class="order-intro">
+                <h2 id="judul-form">Masukkan Data Diri Anda</h2>
+                <p>Untuk melengkapi pemesanan Anda, silakan isi formulir di bawah ini. Semua kolom wajib diisi.</p>
+            </div>
+
+            <form class="order-form" id="formdata" action="#">
+                <div class="field">
+                    <label for="nama">Masukkan nama Anda</label>
+                    <input type="text" id="nama" name="nama" autocomplete="name" placeholder="Contoh: Budi Santoso" required>
+                </div>
+
+                <div class="field field-wide">
+                    <label for="alamat">Masukkan alamat Anda</label>
+                    <textarea id="alamat" name="alamat" rows="3" autocomplete="street-address" placeholder="Jalan, nomor rumah, kelurahan, kota" required></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="tanggal">Masukkan tanggal lahir Anda</label>
+                    <input type="date" id="tanggal" name="tanggal" autocomplete="bday" required>
+                </div>
+
+                <fieldset id="jeniskelamin">
+                    <legend>Jenis kelamin</legend>
+                    <div class="choices">
+                        <div class="choice">
+                            <input type="radio" name="jeniskelamin" id="pria" value="pria" required>
+                            <label for="pria">Pria</label>
+                        </div>
+                        <div class="choice">
+                            <input type="radio" name="jeniskelamin" id="wanita" value="wanita">
+                            <label for="wanita">Wanita</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="hobi">
+                    <legend>Hobi</legend>
+                    <div class="choices">
+                        <div class="choice">
+                            <input type="checkbox" name="hobi" id="membaca" value="membaca">
+                            <label for="membaca">Membaca</label>
+                        </div>
+                        <div class="choice">
+                            <input type="checkbox" name="hobi" id="menulis" value="menulis">
+                            <label for="menulis">Menulis</label>
+                        </div>
+                        <div class="choice">
+                            <input type="checkbox" name="hobi" id="olahraga" value="olahraga">
+                            <label for="olahraga">Olahraga</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button class="btn btn-primary btn-submit" type="submit">Kirim</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="https://wa.me/6289999999">WA / Telp 0899999999</a>
+            <a href="mailto:restuchandra@example.com">Email: restuchandra@example.com</a>
+        </div>
+        <p>Copyright &copy; 2026 Restu Chandra Fitrianto</p>
     </footer>
 </body>
 </html>

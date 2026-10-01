@@ -1,0 +1,472 @@
+/* =========================================================
+   Asisten AI untuk UMKM — style.css
+   Pendekatan: MOBILE-FIRST
+   1) Dasar (phone)            : tanpa media query
+   2) Tablet  (min-width 768px) : menambah/menyesuaikan dasar
+   3) Laptop  (min-width 1024px): menambah/menyesuaikan tablet
+   ========================================================= */
+
+/* ---------- 1. Variabel & reset ---------- */
+:root {
+  --green-900: #12372a;
+  --green-700: #1f6b45;
+  --green-600: #2a8a58;
+  --green-100: #e3f2e8;
+  --green-50:  #f3f9f5;
+  --gold:      #f0bd3c;
+  --ink:       #16241d;
+  --muted:     #4a5d53;
+  --line:      #d2e3d8;
+  --white:     #ffffff;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --gap: 1.25rem;
+  --space-section: 3rem;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--green-50);
+}
+
+h1, h2, h3, p, ul { margin: 0; }
+
+h1, h2, h3 {
+  line-height: 1.2;
+  color: var(--green-900);
+}
+
+ul { padding: 0; list-style: none; }
+
+a { color: var(--green-700); }
+
+svg { display: block; max-width: 100%; height: auto; }
+
+/* Fokus keyboard yang jelas */
+:focus-visible {
+  outline: 3px solid var(--green-600);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link aksesibilitas */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.6rem 1rem;
+  background: var(--green-900);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- 2. Header & navigasi (Flexbox) ---------- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1rem;
+  background: var(--green-900);
+  color: var(--white);
+}
+
+.site-header h1 {
+  font-size: 1.35rem;
+  color: var(--white);
+}
+
+.site-header p {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  color: #cfe6d8;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;              /* area sentuh nyaman */
+  padding: 0 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:hover { background: rgba(255, 255, 255, 0.24); }
+.site-nav a:focus-visible { outline-color: var(--gold); }
+
+/* ---------- 3. Layout utama ---------- */
+main {
+  display: block;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main > section { margin-top: var(--space-section); }
+main > section:last-child { margin-bottom: var(--space-section); }
+
+/* ---------- 4. Hero (Grid) ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);   /* 1 kolom di phone */
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-size: clamp(1.75rem, 7vw, 2.25rem);
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  color: var(--muted);
+  max-width: 38rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-card {
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+}
+
+.hero-art {
+  width: 100%;
+  max-width: 17rem;
+  margin: 0 auto 1rem;
+}
+
+.hero-card h3 { font-size: 1.15rem; }
+
+.product-list {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.product-list li {
+  padding: 0.6rem 0.9rem;
+  background: var(--green-50);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+.product-list strong { color: var(--green-900); }
+
+/* ---------- 5. Tombol ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--green-700);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--green-900); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--green-700);
+  border-color: var(--green-700);
+}
+.btn-ghost:hover { background: var(--green-100); }
+
+/* ---------- 6. Fitur (CSS Grid) ---------- */
+.features h2,
+.order-intro h2 {
+  font-size: 1.5rem;
+}
+
+.section-lead {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);   /* 1 kolom di phone */
+  gap: var(--gap);
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.feature-card h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.75rem;
+  background: var(--green-100);
+  border-radius: 12px;
+  fill: none;
+  stroke: var(--green-700);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- 7. Form ---------- */
+.order {
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+}
+
+.order-intro p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.order-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label,
+legend {
+  font-weight: 600;
+  color: var(--green-900);
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+  font-size: 1rem;               /* 16px: mencegah zoom otomatis di iOS */
+  color: var(--ink);
+  background: var(--white);
+  border: 2px solid #9db8a8;
+  border-radius: var(--radius-sm);
+}
+
+textarea { resize: vertical; }
+
+input::placeholder,
+textarea::placeholder { color: #66786e; }
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  outline: 3px solid rgba(42, 138, 88, 0.35);
+  outline-offset: 0;
+  border-color: var(--green-600);
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend { padding: 0; margin-bottom: 0.5rem; }
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.choice:has(input:checked) {
+  background: var(--green-100);
+  border-color: var(--green-600);
+}
+
+.choice input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+  accent-color: var(--green-700);
+}
+
+.choice label {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-submit { width: 100%; }
+
+/* ---------- 8. Footer ---------- */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem 1.25rem;
+  background: var(--green-900);
+  color: #cfe6d8;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--white);
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   TABLET — min-width: 768px
+   Memakai gaya phone di atas, lalu menyesuaikan ukuran
+   ========================================================= */
+@media (min-width: 768px) {
+  :root { --space-section: 4rem; }
+
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+  }
+  .site-header h1 { font-size: 1.5rem; }
+
+  main { padding: 0 2rem; }
+
+  .hero-actions { flex-direction: row; }
+
+  .hero-card { padding: 2rem; }
+  .hero-art { max-width: 20rem; }
+
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .features h2,
+  .order-intro h2 { font-size: 1.75rem; }
+
+  .order { padding: 2.5rem; }
+
+  .order-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--gap);
+  }
+  .field-wide,
+  fieldset,
+  .btn-submit { grid-column: 1 / -1; }
+
+  .btn-submit { width: auto; justify-self: start; min-width: 12rem; }
+
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+  .footer-links { flex-direction: row; gap: 1.5rem; }
+}
+
+/* =========================================================
+   LAPTOP — min-width: 1024px
+   Memakai gaya tablet di atas, lalu melebarkan layout
+   ========================================================= */
+@media (min-width: 1024px) {
+  :root { --gap: 1.5rem; --space-section: 5rem; }
+
+  .site-header { padding: 1.5rem max(2rem, calc((100% - 72rem) / 2 + 2rem)); }
+  .site-footer { padding: 1.5rem max(2rem, calc((100% - 72rem) / 2 + 2rem)); }
+
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);  /* teks | kartu */
+    gap: 4rem;
+  }
+  .hero-text h2 { font-size: 3rem; }
+  .hero-text p { font-size: 1.1rem; }
+
+  .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .order {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: 3rem;
+    align-items: start;
+    padding: 3rem;
+  }
+  .order-form { margin-top: 0; }
+}
